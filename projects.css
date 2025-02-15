@@ -1,0 +1,217 @@
+/* Resetting margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('98.png'); /* Only filename for the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    left: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    display: inline-block;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Updated Styling for My Creation Text with Moving Prompt Symbols */
+/* The mix-blend-mode makes the text and symbols adapt to the background */
+.my-creation-title {
+    font-family: "Exo", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-weight: bold;
+    position: relative;
+    /* Blend with background to adapt dynamically */
+    animation: color-change 5s ease-in-out infinite; /* Color change animation */
+}
+
+
+/* Moving Symbols (prompt) */
+.moving-symbol {
+    font-family: "Courier New", monospace;
+    font-size: 50px;
+    font-weight: bold;
+    /* The base color can be set, but blend-mode will adjust it */
+    color: orange;
+    position: relative;
+    mix-blend-mode: difference;
+}
+
+/* Left symbol moves right */
+.moving-symbol.left {
+    animation: moveLeft 1.5s infinite alternate ease-in-out;
+}
+
+/* Right symbol moves left */
+.moving-symbol.right {
+    animation: moveRight 1.5s infinite alternate ease-in-out;
+}
+
+/* Animation for left-moving symbol */
+@keyframes moveLeft {
+    from {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Animation for right-moving symbol */
+@keyframes moveRight {
+    from {
+        transform: translateX(20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Outer Container with Glassmorphism Effect */
+.projects-glass-container {
+    width: 70%;
+    background: rgba(27, 24, 24, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+    padding: 50px 0; /* Padding for some space at the top */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2); /* Shadow to enhance the glass effect */
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+/* Projects Section */
+.projects-section {
+    text-align: center;
+    padding: 20px;
+    width: 80%;
+}
+
+/* Project Container Styling */
+.project-item {
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 15px; /* Soft, rounded corners */
+    backdrop-filter: blur(12px); /* Glassmorphism blur effect */
+    -webkit-backdrop-filter: blur(12px); /* Safari compatibility */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for the glass effect */
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin-top: 10px;
+}
+
+.animated-button {
+    color: #242323;
+    padding: 0.7em 1.7em;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 0px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 2px #c5c5c5, 0px -6px 1px #ffffff;
+}
+
+.animated-button:hover {
+    border: 1px solid rgb(15, 15, 15);
+}
+
+.animated-button:active {
+    box-shadow: 0px 0px 0px #535050, 0px -4px 2px #ffffff;
+}
+
+.button-fill-in {
+    background-color: #e4dfde;
+    color: rgb(27, 25, 25);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .project-item {
+        width: 90%;
+    }
+
+    .project-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-item p {
+        font-size: 0.9rem;
+    }
+
+    .animated-button {
+        font-size: 16px;
+        padding: 0.6em 1.5em;
+    }
+}

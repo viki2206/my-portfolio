@@ -1,0 +1,336 @@
+/* Resetting margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('91.png'); /* Only filename for the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* Header Navigation */
+  header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin: 0 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #ff4500; /* Change color on hover */
+  }
+  
+  /* Contact Section */
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Add slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Card Section */
+  .card {
+    width: 17em;
+    height: 22.5em;
+    background: #171717;
+    transition: 1s ease-in-out;
+    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto; /* Center the card */
+    padding: 10px;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: cardFadeIn 1s forwards;
+  }
+  
+  /* Profile Picture Styling */
+  .card .img {
+    width: 4.8em;
+    height: 4.8em;
+    background: none;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .card .img img {
+    width: 130%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Info Text Styling */
+  .card span {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  .card .info {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    margin: 1em;
+  }
+  
+  /* Align phone number and icon horizontally */
+  .card .info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2em;
+  }
+  
+  /* Social Icons Styling */
+  .card .share {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+  }
+  
+  .card .social-icon {
+    width: 2.5em;
+    height: 2.5em;
+    transition: transform 0.4s ease-in-out;
+    object-fit: cover;
+  }
+  
+  .card .social-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(0.8);
+  }
+  
+  /* Button Styling */
+  .card button {
+    padding: 0.8em 1.7em;
+    display: block;
+    margin: auto;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    background: #fffdfd;
+    color: rgb(0, 0, 0);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .card button:hover {
+    background: #ff4500;
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 69, 0, 0.5);
+  }
+  
+  /* Glassmorphism effect for View Resume button */
+  .resume-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    color: rgb(196, 82, 82);
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Apply the blur effect to the background */
+    transition: background 0.3s ease, transform 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Light border */
+  }
+  
+  /* Hover effect for the glassmorphism button */
+  .resume-btn:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly darken on hover */
+    transform: translateY(-5px); /* Slight movement effect */
+  }
+  
+  /* Active effect */
+  .resume-btn:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(2px); /* Slight downward movement when clicked */
+  }
+  
+  /* Header hover animation */
+  header nav ul li a:hover {
+    color: #ff4500;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Card Fade-in Animation */
+  @keyframes cardFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsiveness */
+  @media screen and (max-width: 768px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    header nav ul {
+      flex-direction: column;
+      padding: 10px;
+    }
+    header nav ul li {
+      margin: 10px 0;
+    }
+    button {
+      padding: 0.6em 1.5em;
+      font-size: 16px;
+    }
+  }
+  
+  /* Animated Button from Uiverse.io by gharsh11032000 */
+  .animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: greenyellow;
+    box-shadow: 0 0 0 2px greenyellow;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: greenyellow;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+  

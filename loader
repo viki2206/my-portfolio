@@ -1,0 +1,29 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="assets/css/loader.css">
+</head>
+<body>
+    <div class="loader">
+        <div class="truckWrapper">
+            <div class="truckBody">
+                <img src="assets/images/truck-body.svg" alt="Truck Body">
+            </div>
+            <div class="truckTires">
+                <img src="assets/images/truck-wheel.svg" alt="Truck Wheel">
+                <img src="assets/images/truck-wheel.svg" alt="Truck Wheel">
+            </div>
+            <div class="road"></div>
+            <img src="assets/images/lamp-post.svg" class="lampPost" alt="Lamp Post">
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+/* Resetting margins and padding */
+* {
+    margin: 0;
+    padding: 20;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('92.png'); /* Only filename for the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;/* Centering the heading and adding color animation */
+h1 {
+    text-align: center; /* Centers the text horizontally */
+    font-size: 3rem; /* Adjust size to make it more prominent */
+    margin-top: 50px; /* Add space above the heading */
+    animation: color-change 5s ease-in-out infinite; /* Color change animation */
+}
+
+/* Keyframes for color-changing effect */
+@keyframes color-change {
+    0% {
+        color: #FF5733; /* Red */
+    }
+    25% {
+        color: #33FF57; /* Green */
+    }
+    50% {
+        color: #3357FF; /* Blue */
+    }
+    75% {
+        color: #FF33A1; /* Pink */
+    }
+    100% {
+        color: #FF5733; /* Back to Red */
+    }
+}
+
+    color: white;
+}
+
+/* Header Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 120;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    display: inline-block;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Skills Container - Glassmorphism Effect */
+.container {
+    position: center;
+    max-width: 500px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Subtle border */
+    user-select: none;
+    margin-top: 50px;
+    margin-left: 50px; 
+}
+
+/* Skill Box */
+.skill-box {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.skill-box .title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.skill-box .skill-bar {
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgba(0, 0, 0, 0.2); /* More transparency */
+}
+
+.skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 0; /* Starts from 0% width */
+    border-radius: 6px;
+    background: linear-gradient(135deg, #000000, #cccccc); /* Light gradient */
+    box-shadow: 0 2px 6px rgba(15, 15, 15, 0.3);
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+
+.skill-per.html {
+    width: 90%;
+    animation-delay: 0.1s;
+}
+
+.skill-per.css {
+    width: 80%;
+    animation-delay: 0.1s;
+}
+
+.skill-per.java {
+    width: 60%;
+    animation-delay: 0.2s;
+}
+
+.skill-per.python {
+    width: 70%;
+    animation-delay: 0.2s;
+}
+
+.skill-per.c {
+    width: 80%;
+    animation-delay: 0.3s;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Tooltip for the skill percentages */
+.skill-per .tooltip {
+    position: absolute;
+    right: -54px;
+    top: -28px;
+    font-size: 9px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: #000000;
+    z-index: 1;
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    background: #000000;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    color: white;
+    position: relative; /* Keep the content properly aligned */
+}
+
+/* Welcome Quote Styling */
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Button Styling (from Uiverse.io by adamgiebl) */
+button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    margin-top: 250px; /* Moved button down */
+    display: inline-block; /* Prevents floating */
+}
+
+button:hover {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+button:active {
+    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    button {
+        padding: 0.6em 1.5em;
+        font-size: 16px;
+    }
+}
+
+/* From Uiverse.io by Fcodingx */
+.card {
+    width: 250px;
+    height: 60px; /* Folded state */
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.15); /* Glass effect */
+    border-radius: 12px;
+    backdrop-filter: blur(10px); /* Blurry glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.2);
+    transform: skewX(10deg);
+    transition: height 0.4s ease-in-out, transform 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
+    overflow: hidden;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%) skewX(10deg);
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    height: 260px; /* Expands on hover */
+    transform: translate(-50%, -50%) skew(0deg);
+    backdrop-filter: blur(20px); /* Increase blur on hover */
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  /* Header text */
+  .card h1 {
+    text-align: center;
+    font-size: 18px;
+    margin: 5px 0;
+    color: white;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Skill list */
+  .card p {
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 15px;
+    line-height: 1.5;
+    opacity: 0; /* Hidden when folded */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Show text when hovered */
+  .card:hover p {
+    opacity: 1;
+  }
+  .card.other-skills {
+    position: absolute;
+    top: 50%;
+    right: 200%; /* Move it towards the right side */
+    left:75%;
+    transform: translate(0, -50%) skewX(10deg); /* Keep it centered vertically */
+}
+.card.skills-container{
+    position:absolute;
+    transform: translate(0, -50%) skewX(50deg);
+}
+/* Centering the heading and adding color animation */
+h1 {
+    text-align: center; /* Centers the text horizontally */
+    font-size: 3rem; /* Adjust size to make it more prominent */
+    margin-top: 50px; /* Add space above the heading */
+    animation: color-change 5s ease-in-out infinite; /* Color change animation */
+}

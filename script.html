@@ -1,0 +1,12 @@
+// Wait for the DOM to load completely before executing any code
+document.addEventListener('DOMContentLoaded', function () {
+    // Select the Explore More button
+    const exploreButton = document.querySelector('.uiverse-button');
+    
+    // Add a click event listener to the button
+    exploreButton.addEventListener('click', function () {
+        // Change the button text when clicked
+        exploreButton.textContent = "Exploring...";
+        exploreButton.style.backgroundColor = "#3e8e41"; // Change button color to indicate action
+    });
+});
