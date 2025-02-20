@@ -8,7 +8,7 @@
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('98.png'); /* Only filename for the image */
+    background-image: url('91.png'); /* Only filename for the image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -49,32 +49,33 @@ header nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Updated Styling for My Creation Text with Moving Prompt Symbols */
-/* The mix-blend-mode makes the text and symbols adapt to the background */
+/* Updated Styling for My Creation Text and Symbols with Enhanced Visuals */
 .my-creation-title {
     font-family: "Exo", sans-serif;
-    font-size: 50px;
+    font-size: 60px; /* Adjust size for prominence */
     text-transform: uppercase;
+    letter-spacing: 2px; /* Add spacing between letters for clarity */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    font-weight: bold;
+    font-weight: 700; /* Make it bold for a stronger presence */
     position: relative;
-    /* Blend with background to adapt dynamically */
     animation: color-change 5s ease-in-out infinite; /* Color change animation */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Add shadow for depth */
+    color: #fff; /* Ensure text is readable */
 }
-
 
 /* Moving Symbols (prompt) */
 .moving-symbol {
-    font-family: "Courier New", monospace;
-    font-size: 50px;
+    font-family: "Exo", sans-serif;  /* Use same font as the title for consistency */
+    font-size: 60px; /* Larger symbols for better impact */
     font-weight: bold;
-    /* The base color can be set, but blend-mode will adjust it */
-    color: orange;
+  /* Make symbols the same color as the title */
     position: relative;
-    mix-blend-mode: difference;
+
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0); /* Same shadow effect as the title */
+    animation: moveSymbol 1.5s ease-in-out infinite alternate; /* Apply the same animation for a smooth effect */
 }
 
 /* Left symbol moves right */
@@ -85,6 +86,16 @@ header nav ul li a:hover {
 /* Right symbol moves left */
 .moving-symbol.right {
     animation: moveRight 1.5s infinite alternate ease-in-out;
+}
+
+/* Common animation for the symbols */
+@keyframes moveSymbol {
+    0% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(20px);
+    }
 }
 
 /* Animation for left-moving symbol */
@@ -107,84 +118,81 @@ header nav ul li a:hover {
     }
 }
 
-/* Outer Container with Glassmorphism Effect */
-.projects-glass-container {
-    width: 70%;
-    background: rgba(27, 24, 24, 0.1); /* Semi-transparent background */
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
-    padding: 50px 0; /* Padding for some space at the top */
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2); /* Shadow to enhance the glass effect */
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    max-height: 100%;
-}
 
 /* Projects Section */
 .projects-section {
     text-align: center;
-    padding: 20px;
-    width: 80%;
+    padding: 70px 50px; /* Adjust padding as necessary */
+    width: 95%;
 }
 
-/* Project Container Styling */
-.project-item {
-    width: 80%;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    border-radius: 15px; /* Soft, rounded corners */
-    backdrop-filter: blur(12px); /* Glassmorphism blur effect */
-    -webkit-backdrop-filter: blur(12px); /* Safari compatibility */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for the glass effect */
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Project Card Styles */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    justify-content: center;
+    
 }
 
-.project-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+.card {
+    min-width: 250px;  /* Minimum width for dynamic width */
+    max-width: 400px;  /* Maximum width for large text content */
+    height: auto;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);  /* Transparent background for glass effect */
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);  /* Soft border */
+    backdrop-filter: blur(10px);  /* Glassmorphism effect */
+    transition: 0.5s ease-out;
+    overflow: visible;
 }
 
-.project-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+.card-details {
+    color: black;
+    height: 100%;
+    gap: .8em;
+    display: grid;
+    place-content: center;
+
 }
 
-.project-item p {
+.card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
     font-size: 1rem;
-    margin-bottom: 20px;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
 }
 
-.button-container {
-    margin-top: 10px;
+.text-body {
+    color: rgb(134, 134, 134);
 }
 
-.animated-button {
-    color: #242323;
-    padding: 0.7em 1.7em;
-    font-size: 15px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    cursor: pointer;
-    border: 0px solid #e8e8e8;
-    transition: all 0.3s;
-    box-shadow: 0px 0px 2px #c5c5c5, 0px -6px 1px #ffffff;
+/* Text */
+.text-title {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-.animated-button:hover {
-    border: 1px solid rgb(15, 15, 15);
+/* Hover Effects */
+.card:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
-.animated-button:active {
-    box-shadow: 0px 0px 0px #535050, 0px -4px 2px #ffffff;
-}
-
-.button-fill-in {
-    background-color: #e4dfde;
-    color: rgb(27, 25, 25);
+.card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
 }
 
 /* Footer */
@@ -198,20 +206,22 @@ footer {
 
 /* Responsiveness */
 @media screen and (max-width: 768px) {
-    .project-item {
-        width: 90%;
+    .card {
+        min-width: 200px;
+        max-width: 300px;
+        padding: 1.2rem;
     }
 
-    .project-item h3 {
-        font-size: 1.5rem;
+    .text-title {
+        font-size: 1.2rem;
     }
 
-    .project-item p {
+    .text-body {
         font-size: 0.9rem;
     }
 
-    .animated-button {
-        font-size: 16px;
-        padding: 0.6em 1.5em;
+    .card-button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
 }
