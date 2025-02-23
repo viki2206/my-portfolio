@@ -333,4 +333,6 @@
     height: 220px;
     opacity: 1;
   }
-  
+  a {
+            text-decoration: none;
+        }
