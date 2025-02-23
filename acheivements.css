@@ -1,0 +1,147 @@
+/* General reset for margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('91.png'); /* Set background image here */
+    background-size: cover; /* Make the background cover the entire page */
+    background-position: center center; /* Center the background image */
+    background-attachment: fixed; /* Make the background fixed when scrolling */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 120;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    display: inline-block;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Achievements section */
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Main heading with glassmorphism effect, now without background */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff; /* Set text color to white for contrast */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add subtle shadow for better contrast */
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Apply blur effect behind the text */
+}
+
+/* Glassmorphism effect for achievement cards with reduced width */
+.achievement-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 15px;
+    box-shadow: 5px 8px 16px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    padding: 1.5rem;
+    margin: 2rem 0;
+    width: 80%; /* Reduce the width of the achievement cards */
+    display: inline-block; /* Make them inline to appear next to each other */
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+}
+
+.achievement-card h2 {
+    font-size: 1.8rem;
+    color: #131212; /* White color for text */
+    margin-bottom: 1rem;
+}
+
+.achievement-card p {
+    font-size: 1.1rem;
+    color:#454545; /* White text */
+    margin-bottom: 1rem;
+}
+
+/* Image styling for achievements */
+.achievement-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+/* Styling for leadership section */
+.leadership-images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.leadership-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* List of events in leadership role */
+ul {
+    text-align: left;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .achievement-card {
+        margin: 1rem;
+        width: 90%; /* Make the cards more responsive */
+    }
+
+    .leadership-images {
+        flex-direction: column;
+        align-items: center;
+    }
+}
