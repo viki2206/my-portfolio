@@ -98,7 +98,7 @@ header nav ul li a.active {
 
 .project-description h2 {
     font-size: 28px;
-    color: #0d47a1; /* Theme color for security */
+    color: #000000; /* Theme color for security */
 }
 
 .project-description p {
